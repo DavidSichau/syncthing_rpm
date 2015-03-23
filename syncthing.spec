@@ -11,11 +11,11 @@
 %endif
 
 Name:syncthing
-Version:0.9.17
-Release:2.0%{?dist}
+Version:0.10.29
+Release:3.0%{?dist}
 Summary:Syncthing
 License:MIT
-URL:http://syncthing.net/    
+URL:http://syncthing.net/
 Source0:https://github.com/%{name}/%{name}/releases/download/v%{version}/%{name}-linux-%{altarch}-v%{version}.tar.gz
 Source1:	syncthing@.service
 Source2:	%{name}-linux-386-v%{version}.tar.gz
@@ -40,7 +40,7 @@ Using syncthing, that control is returned to you.
 rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_bindir}
-install -p -m 0755 %{name}-linux-%{altarch}-v%{version}/syncthing %{buildroot}%{_bindir}
+install -p -m 0755 -g wheel %{name}-linux-%{altarch}-v%{version}/syncthing %{buildroot}%{_bindir}
 
 mkdir -p %{buildroot}%{_unitdir}
 install -p -m 0644 %{S:1} %{buildroot}%{_unitdir}
@@ -50,13 +50,13 @@ install -p -m 0644 %{S:1} %{buildroot}%{_unitdir}
 %systemd_post %{name}@.service
 
 %preun
-%systemd_preun %{name}@.servie
+%systemd_preun %{name}@.service
 
 %postun
-%systemd_postun_with_restart %{name}@.service 
+%systemd_postun_with_restart %{name}@.service
 
 %files
-%doc  %{name}-linux-%{altarch}-v%{version}/README.txt %{name}-linux-%{altarch}-v%{version}/LICENSE.txt %{name}-linux-%{altarch}-v%{version}/CONTRIBUTORS.txt
+%doc  %{name}-linux-%{altarch}-v%{version}/README.txt %{name}-linux-%{altarch}-v%{version}/LICENSE.txt %{name}-linux-%{altarch}-v%{version}/AUTHORS.txt
 %{_bindir}/syncthing
 %{_unitdir}/%{name}@.service
 
@@ -95,4 +95,3 @@ install -p -m 0644 %{S:1} %{buildroot}%{_unitdir}
 
 * Mon Jul 28 2014 Onuralp SEZER <thunderbirdtr@fedoraproject.org> 0.8.21-1
 - Initial Version
-
