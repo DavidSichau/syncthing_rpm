@@ -12,7 +12,7 @@
 
 Name:syncthing
 Version:0.10.29
-Release:3.0%{?dist}
+Release:4.0%{?dist}
 Summary:Syncthing
 License:MIT
 URL:http://syncthing.net/
@@ -40,7 +40,7 @@ Using syncthing, that control is returned to you.
 rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_bindir}
-install -p -m 0755 -g wheel %{name}-linux-%{altarch}-v%{version}/syncthing %{buildroot}%{_bindir}
+install -p -m 0755 %{name}-linux-%{altarch}-v%{version}/syncthing %{buildroot}%{_bindir}
 
 mkdir -p %{buildroot}%{_unitdir}
 install -p -m 0644 %{S:1} %{buildroot}%{_unitdir}
