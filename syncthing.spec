@@ -11,8 +11,8 @@
 %endif
 
 Name:syncthing
-Version:0.10.29
-Release:4.0%{?dist}
+Version:0.10.30
+Release:1.0%{?dist}
 Summary:Syncthing
 License:MIT
 URL:http://syncthing.net/

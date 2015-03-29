@@ -36,3 +36,5 @@ Getting Started : https://discourse.syncthing.net/t/getting-started/
 
 License : MIT
 
+To build the prm run:
+`rpmbuild -ba syncthing.spec`
