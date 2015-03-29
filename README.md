@@ -11,21 +11,21 @@ Username part will be your username in your system.
 
 To start service (as root)
 
-systemctl start syncthing@username.service
+`systemctl start syncthing@username.servic`
 
 To stop service
 
-systemctl stop syncthing@username.service
+`systemctl stop syncthing@username.service`
 
 To enable on boot
 
-systemctl enable syncthing@username.service
+`systemctl enable syncthing@username.service`
 
 
 Fedora Repository Installation
 
 
-Fedora Copr Repository : http://copr.fedoraproject.org/coprs/thunderbirdtr/Syncthing_for_Fedora/
+Fedora Copr Repository : https://copr.fedoraproject.org/coprs/tune2fs/syncthing/
 
 
 Website : http://syncthing.net/
